@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  resources :users
   root 'home#index'
+  get 'home/:username' => 'home#index'
+  get 'login' => 'home#login'
+  get 'logout' => 'home#logout'
+
+  get 'index2' => 'home#index2'
+
+  post 'search' => 'home#search'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
