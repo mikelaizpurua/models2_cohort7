@@ -3,7 +3,16 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :check_lang
+
   private
+
+  def check_lang
+    desired_language = params[:lang] || session[:lang] || :en
+    I18n.locale = desired_language
+    session[:lang] = desired_language
+  end
+
   def current_user
     #@user ||= User.find(session[:user_id])
   end

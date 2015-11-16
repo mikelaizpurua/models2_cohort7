@@ -1,7 +1,9 @@
 <h2>Hello world</h2>
 
-<p><%= @user.name %></p>
-<%= link_to "Users Index", users_path(school: "wyncode") %>
-<%= link_to "New User", new_user_path %>
-<%= link_to "User Show", @user %>
-<%= link_to "Edit User", edit_user_path(@user) %>
+This text is i18n'd: <%= t('hello') %>
+
+<%= t('goodbye') %>
+
+<%= t('hi') %>
+
+<a href="/?lang=en">English</a>
